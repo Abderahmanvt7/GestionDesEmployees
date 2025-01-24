@@ -36,6 +36,9 @@ namespace MobileSample.Views
                     case (int)MenuItemType.EmployeeList:
                         MenuPages.Add(id, new NavigationPage(new EmployeeListPage()));
                         break;
+                    case (int)MenuItemType.ProjetsList:
+                        MenuPages.Add(id, new NavigationPage(new ProjetListPage()));
+                        break;
                 }
             }
 

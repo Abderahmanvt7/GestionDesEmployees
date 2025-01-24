@@ -30,6 +30,7 @@ namespace MobileSample
             builder.RegisterType<DepartmentItemViewModel>();
             builder.RegisterType<EmployeeListViewModel>();
             builder.RegisterType<EmployeeItemViewModel>();
+            builder.RegisterType<ProjetListViewModel>();
             //NOTE: Navigation (INavigation) is registered per life time scope basis on  BaseContentPage.cs
 
             Container = builder.Build();

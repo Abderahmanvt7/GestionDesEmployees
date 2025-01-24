@@ -9,7 +9,7 @@ namespace MobileSample.Models
         About,
         DepartmentList,
         EmployeeList,
-        Setup
+        ProjetsList,
     }
 
     public class MainMenuItem
@@ -23,6 +23,7 @@ namespace MobileSample.Models
             menus.Add(new MainMenuItem() { Id = MenuItemType.About, Title = "Accueil" });
             menus.Add(new MainMenuItem() { Id = MenuItemType.DepartmentList, Title = "Départements" });
             menus.Add(new MainMenuItem() { Id = MenuItemType.EmployeeList, Title = "Employés" });
+            menus.Add(new MainMenuItem() { Id = MenuItemType.ProjetsList, Title = "Projets" });
             return menus;
         }
     }
