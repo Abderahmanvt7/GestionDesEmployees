@@ -17,7 +17,7 @@ namespace MobileSample.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFileName = "XamarinSimpleSample.sqlite";
+            string databaseFileName = "GestionDesEmployee.sqlite";
             string databaseFilePath = null;
             if (Device.RuntimePlatform == "Android")
             {
@@ -38,5 +38,14 @@ namespace MobileSample.Models
 
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Optional: Add specific configurations for the User entity
+            modelBuilder.Entity<User>().ToTable("Users");
+        }
     }
 }

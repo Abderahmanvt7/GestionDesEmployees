@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:mvvm="clr-namespace:MobileSample.Views"
+                      xmlns:vm="clr-namespace:MobileSample.ViewModels"
+                      x:TypeArguments="vm:LoginViewModel"
+                      x:Class="MobileSample.Views.LoginPage"
+                      Title="Connexion">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" Spacing="15">
+            <!-- Username Entry -->
+            <Entry Placeholder="Username"
+                   Text="{Binding Username}"
+                   Keyboard="Default"
+                   ReturnType="Next" />
+
+            <!-- Password Entry -->
+            <Entry Placeholder="Password"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   ReturnType="Go" />
+
+            <!-- Login Button -->
+            <Button Text="Login"
+                    Command="{Binding LoginCommand}"
+                    BackgroundColor="DarkBlue"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10" />
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Vous n'avez pas de compte ? " />
+                        <Span Text="Register" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToRegisterCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</mvvm:BaseContentPage>

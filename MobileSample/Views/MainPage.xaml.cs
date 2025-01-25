@@ -39,6 +39,9 @@ namespace MobileSample.Views
                     case (int)MenuItemType.ProjetsList:
                         MenuPages.Add(id, new NavigationPage(new ProjetListPage()));
                         break;
+                    case (int) MenuItemType.Profile:
+                        MenuPages.Add(id, new NavigationPage(new ProfilePage()));
+                        break;
                 }
             }
 

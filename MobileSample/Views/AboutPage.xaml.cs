@@ -9,7 +9,7 @@ namespace MobileSample.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : BaseContentPage<AboutViewModel>
     {
-        public AboutPage()
+        public AboutPage() : base(null)
         {
             InitializeComponent();
             BindingContext = ViewModel;

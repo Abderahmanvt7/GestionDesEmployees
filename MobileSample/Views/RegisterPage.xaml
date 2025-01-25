@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:mvvm="clr-namespace:MobileSample.Views"
+                      xmlns:vm="clr-namespace:MobileSample.ViewModels"
+                      x:TypeArguments="vm:RegisterViewModel"
+                      x:Class="MobileSample.Views.RegisterPage"
+                      Title="Inscription">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" Spacing="15">
+            <Entry Placeholder="Nom d'utilisateur" Text="{Binding Username}" />
+            <Entry Placeholder="Mot de passe" Text="{Binding Password}" IsPassword="True" />
+            <Entry Placeholder="Confirmez le mot de passe" Text="{Binding ConfirmPassword}" IsPassword="True" />
+            <Button Text="S'inscrire" Command="{Binding RegisterCommand}" />
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Vous avez déjà un compte ? " />
+                        <Span Text="Log in" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToLoginCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</mvvm:BaseContentPage>
